@@ -33,7 +33,7 @@ function makeWolf() {
 let isGameOver = false;
 
 function update() {
-    if (isGameOver) return; // Stop the update loop if the game is over
+    if (isGameOver) return;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -57,25 +57,20 @@ function update() {
     });
 
     checkCollisions();
-
-    // Call requestAnimationFrame for the next frame
     requestAnimationFrame(update);
 }
 
 function checkCollisions() {
-    let collided = false; // To track if a collision has already been processed
+    let collided = false; 
 
     list_of_wolf.forEach(wolf => {
         const distance = Math.sqrt((wolf.x - sheepX) ** 2 + (wolf.y - sheepY) ** 2);
         if (distance < (30 + sheepRadius) && !collided) {
-            // Only reduce the radius once per update cycle, on the first collision
             sheepRadius -= 5;
             console.log(`Sheep Radius: ${sheepRadius}`);
-            collided = true; // Mark that a collision has been handled
-
-            // Check if sheep's radius is less than or equal to 10
+            collided = true; 
             if (sheepRadius <= 10) {
-                endGame(); // Call endGame if sheep's radius is too small
+                endGame();
             }
         }
     });
@@ -89,7 +84,7 @@ canvas.addEventListener("mousemove", (event) => {
     const dx = targetX - sheepX;
     const dy = targetY - sheepY;
 
-    sheepX += dx * 0.1; // Adjust the speed by changing the multiplier
+    sheepX += dx * 0.1;
     sheepY += dy * 0.1;
 });
 
@@ -114,12 +109,16 @@ setInterval(() => {
 }, 5000);
 
 function endGame() {
-    list_of_wolf.length = 0; // Clear all wolves
-    level = 1;               // Reset level
-    sheepRadius = 0;          // Hide the sheep
-    isGameOver = true;        // Set game over flag to true
-    context.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    list_of_wolf.length = 0;
+    let result = level;
+    localStorage.setItem('gameResult', result);
+    level = 1;
+    sheepRadius = 0;
+    isGameOver = true;
+    context.clearRect(0, 0, canvas.width, canvas.height);
     console.log("Game Over. All cleared, level reset to 1.");
+    window.location.href = 'result.html';
 }
+
 
 requestAnimationFrame(update);

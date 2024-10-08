@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Survival Game</title>
+</head>
+<body>
+    <section id="Game">
+        <h1>SURVIVAL GAME</h1>
+        <h2>How to Play</h2>
+        <div>
+            <ul>
+                <li>This game is about the survival of the sheep herd.</li>
+                <li>You are given a herd of sheep represented by the green color and wolves represented by the red color.</li>
+                <li>After every 5 seconds, the herd of sheep increases by 5 pixels of radius and the wolves increase by one.</li>
+                <li>If you get hit by a wolf, the radius of the sheep will decrease by 5 pixels.</li>
+            </ul>
+        </div>
+    <button onClick="startGame()">Start</button>
+    </section>
+    
+    <script>
+        function startGame() {
+            // Redirect to game.html
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>
