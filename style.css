@@ -21,6 +21,7 @@ canvas{
     border:2px solid black;
     border-radius: 10px;
     margin:auto;
+    background-color: black;
 }
 
 #Game{
@@ -30,4 +31,37 @@ canvas{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#Game div li, #Game h2{
+    color:white;
+}
+
+#Game div li{
+    font-size: 1.7rem;
+}
+
+#rule{
+    border:2px solid red;
+    margin-bottom: 2rem;
+}
+
+button{
+    width:6rem;
+    height: 2rem;
+}
+
+#Heading{
+    color:black;
+    margin:auto;
+}
+
+#result{
+    text-align:center;
+    font-size: 3rem;
 }
