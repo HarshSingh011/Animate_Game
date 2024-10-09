@@ -12,8 +12,9 @@ let sheepRadius = 30 + (level * 2);
 
 setInterval(() => {
     sheepRadius += 5;
-}, 5000);
+}, 3000);
 
+let audioUnlocked = false;
 
 function drawSheep() {
     context.beginPath();
@@ -106,7 +107,7 @@ setInterval(() => {
     for (let i = prelevel; i < level; i++) {
         makeWolf();
     }
-}, 5000);
+}, 3000);
 
 function endGame() {
     list_of_wolf.length = 0;
