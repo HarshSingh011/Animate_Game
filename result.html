@@ -10,10 +10,14 @@
     <section id="score">
         <h1 id="Heading">Your Score is</h1>
         <h2 id="result">0</h2>
+        <button onClick="restartGame()">Restart</button>
     </section>
     <script>
         let value = localStorage.getItem('gameResult');
         document.querySelector('#result').innerHTML = value-1;
+        function restartGame(){
+            window.location.href = 'game.html';
+        }
     </script>
 </body>
 </html>
