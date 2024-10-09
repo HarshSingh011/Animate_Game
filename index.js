@@ -111,22 +111,13 @@ setInterval(() => {
 function endGame() {
     list_of_wolf.length = 0;
     let result = level;
-
-    // Debugging: log the result before saving
     console.log("Saving result to localStorage:", result);
-
-    // Save the current level in localStorage
     localStorage.setItem('gameResult', result);
-
-    // Verify if the result is saved in localStorage
     console.log("Stored result:", localStorage.getItem('gameResult'));
-
     level = 1;
     sheepRadius = 0;
     isGameOver = true;
     console.log("Game Over. All cleared, level reset to 1.");
-
-    // Redirect to result page
     window.location.href = 'result.html';
 }
 

@@ -73,6 +73,10 @@ button{
     height: 2rem;
 }
 
+.gamebutton{
+    box-shadow: 18px 18px 9px white(0, 0, 0, 0.3);
+    color: linear-gradient(115deg, #175fab, #3be06d);
+}
 
 #result{
     text-align:center;
