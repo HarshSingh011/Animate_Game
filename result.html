@@ -7,12 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="Heading">Your Score is</h1>
-    <h2 id="result">0</h2>
+    <section id="score">
+        <h1 id="Heading">Your Score is</h1>
+        <h2 id="result">0</h2>
+    </section>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const level = urlParams.get('gameResult');
-        document.getElementById('result').textContent = level !== null ? level : "0";
+        let value = localStorage.getItem('gameResult');
+        document.querySelector('#result').innerHTML = value-1;
     </script>
 </body>
 </html>
